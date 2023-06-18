@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import UsersList from './UsersList';
+import users from '../data/users';
 import '../App.css';
 
 export default class UserContainer extends Component {
@@ -7,10 +8,11 @@ export default class UserContainer extends Component {
 		users: [],
 	};
 	fetchData = () => {
-		fetch('https://randomuser.me/api/?results=10')
-			.then((response) => response.json())
-			.then((data) => this.setState({ users: data.results }))
-			.catch((error) => console.error(error));
+		// fetch('https://randomuser.me/api/?results=10')
+		// 	.then((response) => response.json())
+		// 	.then((data) => this.setState({ users: data.results }))
+		// 	.catch((error) => console.error(error));
+		this.setState({users});
 	};
 	componentDidMount() {
 		this.fetchData();
